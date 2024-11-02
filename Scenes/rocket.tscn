@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://pkmnskgkcpc4"]
 
-[ext_resource type="Texture2D" uid="uid://cbro0i3ryiaas" path="res://rocket/rocket.png" id="1_w1rb6"]
+[ext_resource type="Texture2D" uid="uid://cbro0i3ryiaas" path="res://Sprites/rocket/rocket.png" id="1_w1rb6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkt15"]
 radius = 7.0
 
 [node name="Rocket" type="CharacterBody2D"]
+top_level = true
 
 [node name="Rocket" type="Sprite2D" parent="."]
 position = Vector2(0, 60)

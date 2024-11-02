@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bknmqgndkol82"]
+[gd_scene load_steps=3 format=3 uid="uid://bknmqgndkol82"]
 
-[ext_resource type="PackedScene" path="res://rocket/rocket.tscn" id="1_mhbdb"]
+[ext_resource type="PackedScene" uid="uid://pkmnskgkcpc4" path="res://Scenes/rocket.tscn" id="1_mhbdb"]
+[ext_resource type="PackedScene" uid="uid://b7th283qakcw7" path="res://Scenes/background.tscn" id="1_u1wt5"]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Background" parent="." instance=ExtResource("1_u1wt5")]
+
 [node name="Rocket" parent="." instance=ExtResource("1_mhbdb")]
+position = Vector2(330, 527)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(330, 527)
 zoom = Vector2(3.5, 3.5)
