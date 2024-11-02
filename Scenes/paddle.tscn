@@ -26,13 +26,13 @@ position = Vector2(-13, -11)
 texture = ExtResource("1_eh8xt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-17, -16)
+position = Vector2(-26, -26)
 rotation = 0.808862
 scale = Vector2(1.11311, 1.05523)
 shape = SubResource("CapsuleShape2D_chx23")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-23, -8)
+position = Vector2(-32, -18)
 rotation = 0.478214
 scale = Vector2(1.11311, 1.05523)
 shape = SubResource("CapsuleShape2D_chx23")
