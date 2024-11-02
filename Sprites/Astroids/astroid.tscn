@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsdgmb1bay6yu"]
+
+[ext_resource type="Texture2D" uid="uid://bew8ejtukocfw" path="res://Astroids/Astroid001.png" id="1_ocq75"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olq33"]
+radius = 9.0
+height = 28.0
+
+[node name="Astroid" type="Area2D"]
+
+[node name="Astroid001" type="Sprite2D" parent="."]
+texture = ExtResource("1_ocq75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
