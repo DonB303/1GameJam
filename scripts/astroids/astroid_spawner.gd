@@ -9,7 +9,7 @@ extends Node2D
 func spawn():
 	const ASTROID = preload("res://Scenes/astroids/astroid.tscn")
 	var new_astroid = ASTROID.instantiate()
-	new_astroid.global_position = spawn_position.global_position
+	new_astroid.global_position = spawn_position.sglobal_position
 	spawn_position.add_child(new_astroid)
 
 
