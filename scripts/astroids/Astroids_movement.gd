@@ -4,6 +4,10 @@ extends Area2D
 var travelled_distance = 0
 var range = 1000
 
+func _ready() -> void:
+	# Setzt die Rotation des Asteroiden auf einen zufälligen Wert zwischen -40 und 40 Grad
+	rotation = deg_to_rad(randf_range(-40, 40))
+
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.DOWN.rotated(rotation)
 	position += direction * speed * delta
