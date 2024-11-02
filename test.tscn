@@ -8,11 +8,11 @@ size = Vector2(128, 129)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Background" parent="." instance=ExtResource("2_jju6f")]
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_t3pp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(472, 429.5)
 shape = SubResource("RectangleShape2D_rhgxk")
-
-[node name="Background" parent="." instance=ExtResource("2_jju6f")]
