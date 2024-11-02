@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqg1etqgnlmom"]
+[gd_scene load_steps=3 format=3 uid="uid://c276pqwljbf3q"]
 
 [ext_resource type="PackedScene" uid="uid://e24gtmkelpxs" path="res://Scenes/rocket/rocket.tscn" id="1_ubmlh"]
+[ext_resource type="PackedScene" uid="uid://dxnc7dv74i1o6" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="2_j53jh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,3 +9,6 @@
 zoom = Vector2(3.5, 3.5)
 
 [node name="Rocket" parent="." instance=ExtResource("1_ubmlh")]
+
+[node name="Astroid spawner" parent="." instance=ExtResource("2_j53jh")]
+position = Vector2(3, -53)
