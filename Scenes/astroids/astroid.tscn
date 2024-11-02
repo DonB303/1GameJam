@@ -8,6 +8,8 @@ radius = 9.0
 height = 28.0
 
 [node name="Astroid" type="Area2D"]
+top_level = true
+collision_mask = 9
 script = ExtResource("1_qq8yn")
 
 [node name="Astroid001" type="Sprite2D" parent="."]
@@ -18,4 +20,5 @@ position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_olq33")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

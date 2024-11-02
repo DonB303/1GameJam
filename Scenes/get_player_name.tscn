@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl048f2jsrwxn"]
+
+[ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="1_tb5nc"]
+
+[node name="GetPlayerName" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 200.0
+offset_right = 472.0
+offset_bottom = 336.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 224.0
+offset_right = 256.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("1_tb5nc")
+theme_override_font_sizes/font_size = 20
+text = "NAME:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 224.0
+offset_right = 448.0
+offset_bottom = 255.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 280.0
+offset_right = 376.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("1_tb5nc")
+theme_override_font_sizes/font_size = 20
+text = "SUBMIT"

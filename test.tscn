@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c276pqwljbf3q"]
 
-[ext_resource type="PackedScene" uid="uid://e24gtmkelpxs" path="res://Scenes/rocket/rocket.tscn" id="1_ubmlh"]
-[ext_resource type="PackedScene" uid="uid://dxnc7dv74i1o6" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="2_j53jh"]
+[ext_resource type="PackedScene" uid="uid://cu4fxp44do4wl" path="res://Scenes/rocket/rocket.tscn" id="1_ubmlh"]
+[ext_resource type="PackedScene" uid="uid://bdd2wcdhj2oi" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="2_j53jh"]
 
 [node name="Node2D" type="Node2D"]
 
