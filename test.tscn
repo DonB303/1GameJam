@@ -18,3 +18,8 @@ shape = SubResource("RectangleShape2D_rhgxk")
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(472, 429)
 texture = ExtResource("2_2i8ym")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 733.0
+offset_bottom = 329.0
+text = "Acoording to the laws of aviation, thre is no way a bee could ffly."
