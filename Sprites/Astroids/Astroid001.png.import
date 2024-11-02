@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bifn7ubcrwqdx"
-path="res://.godot/imported/Astroid002.png-dfbec9c7c81e4d108de86ba3ea00c3c4.ctex"
+uid="uid://bew8ejtukocfw"
+path="res://.godot/imported/Astroid001.png-81babb9b53e767cac7c7d0a154128d52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Astroids/Astroid002.png"
-dest_files=["res://.godot/imported/Astroid002.png-dfbec9c7c81e4d108de86ba3ea00c3c4.ctex"]
+source_file="res://Sprites/Astroids/Astroid001.png"
+dest_files=["res://.godot/imported/Astroid001.png-81babb9b53e767cac7c7d0a154128d52.ctex"]
 
 [params]
 

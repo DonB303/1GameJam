@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bew8ejtukocfw"
-path="res://.godot/imported/Astroid001.png-09b547414408836f6d4ee1f12db3811a.ctex"
+uid="uid://q2xcmfbwei8g"
+path="res://.godot/imported/shield.png-b83eb29ab90d280c5714b9fa5cc30600.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Astroids/Astroid001.png"
-dest_files=["res://.godot/imported/Astroid001.png-09b547414408836f6d4ee1f12db3811a.ctex"]
+source_file="res://Sprites/shield/shield.png"
+dest_files=["res://.godot/imported/shield.png-b83eb29ab90d280c5714b9fa5cc30600.ctex"]
 
 [params]
 

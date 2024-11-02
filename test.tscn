@@ -1,7 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bknmqgndkol82"]
 
-[ext_resource type="PackedScene" uid="uid://pkmnskgkcpc4" path="res://rocket/rocket.tscn" id="1_mhbdb"]
+[ext_resource type="PackedScene" path="res://rocket/rocket.tscn" id="1_mhbdb"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Rocket" parent="." instance=ExtResource("1_mhbdb")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
