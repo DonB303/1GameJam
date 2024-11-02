@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bknmqgndkol82"]
 
-[ext_resource type="PackedScene" path="res://Scenes/rocket.tscn" id="1_mhbdb"]
+[ext_resource type="PackedScene" uid="uid://cu4fxp44do4wl" path="res://Scenes/rocket/rocket.tscn" id="1_mhbdb"]
 [ext_resource type="PackedScene" uid="uid://b7th283qakcw7" path="res://Scenes/bg/background.tscn" id="2_wcml8"]
 [ext_resource type="PackedScene" uid="uid://dxnc7dv74i1o6" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="3_pvpv1"]
 
