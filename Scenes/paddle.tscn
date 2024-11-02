@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ud7asdytkc2"]
+
+[ext_resource type="Texture2D" uid="uid://q2xcmfbwei8g" path="res://Sprites/shield/shield.png" id="1_eh8xt"]
+
+[sub_resource type="GDScript" id="GDScript_kel16"]
+resource_name = "PaddleScript"
+script/source = "extends CharacterBody2D
+
+func _physics_process(delta: float) -> void:
+	look_at(get_global_mouse_position())
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chx23"]
+radius = 2.7828
+height = 14.42
+
+[node name="Paddle" type="CharacterBody2D"]
+script = SubResource("GDScript_kel16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eh8xt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, -16)
+rotation = 0.808862
+scale = Vector2(1.11311, 1.05523)
+shape = SubResource("CapsuleShape2D_chx23")

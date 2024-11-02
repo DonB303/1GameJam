@@ -8,7 +8,6 @@ radius = 9.0
 height = 28.0
 
 [node name="Astroid" type="Area2D"]
-rotation = -0.671593
 script = ExtResource("1_qq8yn")
 
 [node name="Astroid001" type="Sprite2D" parent="."]
