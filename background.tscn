@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7th283qakcw7"]
+
+[ext_resource type="Shader" path="res://Shaders/ScrollyShader.gdshader" id="1_s4r80"]
+[ext_resource type="Texture2D" uid="uid://rolf7jy4ya1c" path="res://Sprites/BG/starrybckg.png" id="2_1l0j4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxpmb"]
+shader = ExtResource("1_s4r80")
+shader_parameter/SPEED = 0.5
+
+[node name="Background" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_kxpmb")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1l0j4")
+stretch_mode = 1

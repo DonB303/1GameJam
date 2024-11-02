@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bknmqgndkol82"]
+[gd_scene load_steps=4 format=3 uid="uid://bknmqgndkol82"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_t3pp4"]
+[ext_resource type="PackedScene" uid="uid://b7th283qakcw7" path="res://background.tscn" id="2_jju6f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhgxk"]
 size = Vector2(128, 129)
@@ -13,3 +14,5 @@ script = ExtResource("1_t3pp4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(472, 429.5)
 shape = SubResource("RectangleShape2D_rhgxk")
+
+[node name="Background" parent="." instance=ExtResource("2_jju6f")]
