@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 [sub_resource type="Gradient" id="Gradient_b0063"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_boc8t"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lpre1"]
 gradient = SubResource("Gradient_b0063")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qxwrg"]
@@ -28,7 +28,7 @@ initial_velocity_min = -15.0
 initial_velocity_max = 15.0
 gravity = Vector3(0, 98, 0)
 scale_max = 1.5
-color_ramp = SubResource("GradientTexture1D_boc8t")
+color_ramp = SubResource("GradientTexture1D_lpre1")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkt15"]
 radius = 7.0

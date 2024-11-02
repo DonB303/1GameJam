@@ -19,10 +19,10 @@ position = Vector2(330, 527)
 [node name="Node" type="Node" parent="."]
 
 [node name="Astroid spawner" parent="Node" instance=ExtResource("3_pvpv1")]
-position = Vector2(331, 412)
+position = Vector2(161, 185)
 
 [node name="Astroid spawner2" parent="Node" instance=ExtResource("3_pvpv1")]
-position = Vector2(235, 441)
+position = Vector2(136, 214)
 
 [node name="Astroid spawner3" parent="Node" instance=ExtResource("3_pvpv1")]
-position = Vector2(425, 441)
+position = Vector2(186, 214)
