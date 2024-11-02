@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://wfoyk5a6yalc"]
+
+[ext_resource type="Texture2D" uid="uid://b6l4y1rvn8d8a" path="res://motivation/Motivation.png" id="1_qnosj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_by0jh"]
+font_size = 64
+font_color = Color(1, 0.760045, 0.71637, 1)
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 32
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Motivation" type="Node2D"]
+
+[node name="Motivation" type="Sprite2D" parent="."]
+position = Vector2(329, 302)
+texture = ExtResource("1_qnosj")
+
+[node name="Label" type="Label" parent="."]
+offset_top = 527.0
+offset_right = 385.0
+offset_bottom = 702.0
+text = "WORK"
+label_settings = SubResource("LabelSettings_by0jh")
