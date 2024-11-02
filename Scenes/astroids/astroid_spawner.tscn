@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxnc7dv74i1o6"]
+
+[ext_resource type="Script" path="res://scripts/astroid_spawner.gd" id="1_3qmtj"]
+
+[node name="Astroid spawner" type="Node"]
+script = ExtResource("1_3qmtj")
+
+[node name="Marker2D" type="Marker2D" parent="."]

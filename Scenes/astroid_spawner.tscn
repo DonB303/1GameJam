@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://dxnc7dv74i1o6"]
-
-[node name="Astroid spawner" type="Node"]
-
-[node name="Marker2D" type="Marker2D" parent="."]

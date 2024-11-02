@@ -1,4 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c302b460m11sp"]
+<<<<<<< HEAD:Scenes/rocket.tscn
+[gd_scene load_steps=6 format=3 uid="uid://pkmnskgkcpc4"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://e24gtmkelpxs"]
+>>>>>>> 524d060f60bef19ddd1bb54059a2dfc417d2c31a:Scenes/rocket/rocket.tscn
 
 [ext_resource type="Texture2D" uid="uid://cbro0i3ryiaas" path="res://Sprites/rocket/rocket.png" id="1_w1rb6"]
 [ext_resource type="PackedScene" uid="uid://b1ud7asdytkc2" path="res://Scenes/paddle.tscn" id="2_numcu"]
@@ -23,8 +27,11 @@ radius = 5.0
 height = 28.0
 
 [node name="Rocket" type="CharacterBody2D"]
+<<<<<<< HEAD:Scenes/rocket.tscn
 top_level = true
 script = SubResource("GDScript_buagq")
+=======
+>>>>>>> 524d060f60bef19ddd1bb54059a2dfc417d2c31a:Scenes/rocket/rocket.tscn
 
 [node name="Rocket" type="Sprite2D" parent="."]
 position = Vector2(0, 60)
