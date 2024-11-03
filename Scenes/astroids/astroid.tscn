@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="3_euf12"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olq33"]
-radius = 9.0
-height = 28.0
+radius = 7.0
+height = 24.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mrxo"]
 
@@ -41,21 +41,6 @@ shadow_offset = Vector2(0, 3.41)
 font = ExtResource("3_euf12")
 font_color = Color(1, 1, 1, 0)
 
-[sub_resource type="Animation" id="Animation_vutss"]
-resource_name = "notifi"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:label_settings:font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_jilw5"]
 length = 0.001
 tracks/0/type = "value"
@@ -69,6 +54,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vutss"]
+resource_name = "notifi"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tm4ul"]
@@ -89,7 +89,7 @@ script = ExtResource("1_qq8yn")
 texture = ExtResource("2_xrtj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-1, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_olq33")
 

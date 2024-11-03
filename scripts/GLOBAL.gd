@@ -1,6 +1,8 @@
 extends Node
 
 var reged = false
+var died = false
+var astroids_run = false
 
 var score
 var player_name : String

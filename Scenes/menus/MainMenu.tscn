@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn6j23v5pcwlr"]
+[gd_scene load_steps=12 format=3 uid="uid://dn6j23v5pcwlr"]
 
 [ext_resource type="Script" path="res://Scenes/menus/main_menu.gd" id="1_2waa3"]
 [ext_resource type="Texture2D" uid="uid://b0uvoabttp1s4" path="res://Scenes/menus/Penisssss (DEBUG) 02.11.2024 20_52_16.png" id="1_4jvug"]
@@ -40,6 +40,10 @@ shadow_offset = Vector2(0, 3.41)
 [sub_resource type="LabelSettings" id="LabelSettings_6cq4h"]
 font = ExtResource("1_hy3sd")
 font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_8etly"]
+font = ExtResource("1_hy3sd")
+font_size = 15
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -125,10 +129,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -287.5
-offset_top = 72.0
-offset_right = 288.5
-offset_bottom = 153.0
+offset_left = -305.5
+offset_top = 62.0
+offset_right = 270.5
+offset_bottom = 143.0
 grow_horizontal = 2
 text = "Meteor Defender"
 label_settings = SubResource("LabelSettings_6cq4h")
@@ -138,6 +142,15 @@ position = Vector2(330, 366)
 stream = ExtResource("5_jf4s7")
 pitch_scale = 1.2
 autoplay = true
+
+[node name="Highscore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 138.0
+offset_right = 121.0
+offset_bottom = 161.0
+text = "Highscore:"
+label_settings = SubResource("LabelSettings_8etly")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

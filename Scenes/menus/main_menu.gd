@@ -1,6 +1,7 @@
 extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var highscore: Label = $Highscore
 
 var pitch_scale_plus = randf_range(0.005, 0.05)
 var minus_oder_pluss = randf_range(1, 2)
@@ -15,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	highscore.text = str(GlobalTimer.high_score)
 
 
 func _on_play_pressed() -> void:

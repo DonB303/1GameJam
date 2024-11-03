@@ -1,0 +1,837 @@
+[gd_scene load_steps=29 format=3 uid="uid://cliwjwymo0md3"]
+
+[ext_resource type="Script" path="res://Scenes/tutorial.gd" id="1_03xf2"]
+[ext_resource type="PackedScene" uid="uid://5p15jxkxho6l" path="res://Scenes/rocket.tscn" id="1_ayovs"]
+[ext_resource type="Texture2D" uid="uid://754y2l53lwnd" path="res://Scenes/menus/a/A.png" id="2_edi6m"]
+[ext_resource type="PackedScene" uid="uid://b7th283qakcw7" path="res://Scenes/bg/background.tscn" id="2_plhrb"]
+[ext_resource type="Texture2D" uid="uid://ctk6bjcrhmi10" path="res://Scenes/menus/d/d.png" id="3_hgsby"]
+[ext_resource type="Shader" path="res://Shaders/ScrollyShader.gdshader" id="3_rdm6e"]
+[ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="3_w8crm"]
+[ext_resource type="Texture2D" uid="uid://rolf7jy4ya1c" path="res://Sprites/BG/starrybckg.png" id="4_6hofp"]
+[ext_resource type="Texture2D" uid="uid://lns1o3rak8se" path="res://Scenes/menus/s/s.png" id="4_ck14u"]
+[ext_resource type="Script" path="res://Scenes/astroid.gd" id="4_rjput"]
+[ext_resource type="Texture2D" uid="uid://dr6jv0f5mnpac" path="res://Scenes/menus/w/W.png" id="5_avr6g"]
+[ext_resource type="Texture2D" uid="uid://bew8ejtukocfw" path="res://Sprites/Astroids/Astroid001.png" id="5_q6peg"]
+[ext_resource type="Texture2D" uid="uid://nscij3xtri2w" path="res://Scenes/menus/s/s_pressed.png" id="6_jy0mn"]
+[ext_resource type="Texture2D" uid="uid://b72j2qhscwc63" path="res://Scenes/menus/w/W_pressed.png" id="7_pn1kk"]
+[ext_resource type="Texture2D" uid="uid://bwqciewpo83b" path="res://Scenes/menus/d/d_pressed.png" id="8_83ust"]
+[ext_resource type="Texture2D" uid="uid://b30yjgd5bwn47" path="res://Scenes/menus/a/A_pressed.png" id="9_scwdp"]
+[ext_resource type="Texture2D" uid="uid://c4d017r8ce78u" path="res://Scenes/menus/cursor.png" id="11_06kgc"]
+[ext_resource type="AudioStream" uid="uid://by1diwv3h72j1" path="res://Musik.mp3" id="18_vkyn8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxpmb"]
+shader = ExtResource("3_rdm6e")
+shader_parameter/SPEED = 0.05
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olq33"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="Animation" id="Animation_ptkt8"]
+resource_name = "wasd"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wasd/A:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wasd/D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wasd/S:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wasd/W:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wasd/SPressed:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("wasd/WPressed:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("wasd/DPressed:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("wasd/APressed:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2og4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wasd/A:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wasd/D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wasd/S:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wasd/W:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wasd/SPressed:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("wasd/WPressed:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("wasd/DPressed:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("wasd/APressed:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("wiglewigle/Cursor:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(278, 248)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Node2D3/CanvasLayer/Label:label_settings:font_color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Node2D3/CanvasLayer/Label2:label_settings:font_color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Node2D3/CanvasLayer/Label:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Node2D3/CanvasLayer/Label2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Node2D3/Rocket:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1324, 279)]
+}
+
+[sub_resource type="Animation" id="Animation_ilqjo"]
+resource_name = "cursor"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wiglewigle/Cursor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(302, 248), Vector2(308, 242), Vector2(326, 235), Vector2(343, 241), Vector2(349, 248)]
+}
+
+[sub_resource type="Animation" id="Animation_0w8qb"]
+resource_name = "text"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D3/CanvasLayer/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D3/CanvasLayer/Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D3/CanvasLayer/Label2:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D3/Rocket:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(10, 12.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1324, 279), Vector2(1324, 230), Vector2(1321, -560)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arhy3"]
+_data = {
+"RESET": SubResource("Animation_2og4i"),
+"cursor": SubResource("Animation_ilqjo"),
+"text": SubResource("Animation_0w8qb"),
+"wasd": SubResource("Animation_ptkt8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgcnx"]
+size = Vector2(289, 18)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4oso0"]
+font = ExtResource("3_w8crm")
+font_size = 25
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l4iwv"]
+font = ExtResource("3_w8crm")
+font_size = 25
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_03xf2")
+
+[node name="Background" parent="." instance=ExtResource("2_plhrb")]
+
+[node name="Background2" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background2"]
+material = SubResource("ShaderMaterial_kxpmb")
+offset_left = 675.0
+offset_top = -3.0
+offset_right = 1342.0
+offset_bottom = 1197.0
+texture = ExtResource("4_6hofp")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background2"]
+material = SubResource("ShaderMaterial_kxpmb")
+offset_left = 1338.0
+offset_top = 2.0
+offset_right = 2005.0
+offset_bottom = 1202.0
+texture = ExtResource("4_6hofp")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1311, 15)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_arhy3")
+}
+autoplay = "wasd"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(328, 609)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(336, 376)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(336, 521)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(229, 475)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(431, 473)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, -232)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(328, 609)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(336, 376)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(336, 521)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(229, 475)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(431, 473)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(987, -232)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(328, 609)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(336, 376)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(336, 521)
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(229, 475)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(431, 473)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jgcnx")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Rocket" parent="Node2D" instance=ExtResource("1_ayovs")]
+position = Vector2(331, 512)
+
+[node name="Cam1" type="Camera2D" parent="Node2D"]
+position = Vector2(331, 514)
+zoom = Vector2(3.5, 3.5)
+
+[node name="Timer1" type="Timer" parent="Node2D"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(0, -232)
+
+[node name="Rocket" parent="Node2D2" instance=ExtResource("1_ayovs")]
+position = Vector2(331, 279)
+
+[node name="Cam2" type="Camera2D" parent="Node2D2"]
+position = Vector2(331, 514)
+enabled = false
+zoom = Vector2(3.5, 3.5)
+
+[node name="Timer2" type="Timer" parent="Node2D2"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(985, -232)
+
+[node name="Rocket" parent="Node2D3" instance=ExtResource("1_ayovs")]
+position = Vector2(1324, 279)
+
+[node name="Cam3" type="Camera2D" parent="Node2D3"]
+position = Vector2(331, 514)
+enabled = false
+zoom = Vector2(3.5, 3.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2D3"]
+
+[node name="Label" type="Label" parent="Node2D3/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -294.5
+offset_top = 59.0
+offset_right = 389.5
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "     Meteors incoming! Try to defeat 
+them and survive the cosmic onslaught!"
+label_settings = SubResource("LabelSettings_4oso0")
+
+[node name="Label2" type="Label" parent="Node2D3/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -307.5
+offset_top = 59.0
+offset_right = 376.5
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "You survived, but more meteors are ahead!"
+label_settings = SubResource("LabelSettings_l4iwv")
+
+[node name="meteords" type="Node" parent="Node2D3"]
+
+[node name="Astroid" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1244, -2)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid2" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1312, 14)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid2"]
+texture = ExtResource("5_q6peg")
+
+[node name="Astroid3" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1364, -35)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid3"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid3"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid4" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1269, -127)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid4"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid4"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid5" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1352, -168)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid5"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid5"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid6" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1291, -79)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid6"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid6"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid7" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1199, -86)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid7"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid7"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid8" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1408, -116)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid8"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid8"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid9" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1252, -194)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid9"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid9"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid10" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1204, -227)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid10"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid10"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid11" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1317, -286)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid11"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid11"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid12" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1417, -306)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid12"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid12"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid13" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1418, -221)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid13"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid13"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid14" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1346, -327)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid14"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid14"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid15" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1271, -378)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid15"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid15"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid16" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1217, -370)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid16"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid16"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="Astroid17" type="Area2D" parent="Node2D3/meteords"]
+position = Vector2(1248, -301)
+script = ExtResource("4_rjput")
+
+[node name="Astroid001" type="Sprite2D" parent="Node2D3/meteords/Astroid17"]
+texture = ExtResource("5_q6peg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/meteords/Astroid17"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_olq33")
+
+[node name="wasd" type="Node2D" parent="."]
+top_level = true
+position = Vector2(35, 0)
+
+[node name="A" type="Sprite2D" parent="wasd"]
+position = Vector2(282, 502)
+texture = ExtResource("2_edi6m")
+
+[node name="D" type="Sprite2D" parent="wasd"]
+position = Vector2(312, 502)
+texture = ExtResource("3_hgsby")
+
+[node name="S" type="Sprite2D" parent="wasd"]
+position = Vector2(297, 502)
+texture = ExtResource("4_ck14u")
+
+[node name="W" type="Sprite2D" parent="wasd"]
+position = Vector2(297, 487)
+texture = ExtResource("5_avr6g")
+
+[node name="SPressed" type="Sprite2D" parent="wasd"]
+visible = false
+position = Vector2(297, 502)
+texture = ExtResource("6_jy0mn")
+
+[node name="WPressed" type="Sprite2D" parent="wasd"]
+visible = false
+position = Vector2(297, 487)
+texture = ExtResource("7_pn1kk")
+
+[node name="DPressed" type="Sprite2D" parent="wasd"]
+visible = false
+position = Vector2(312, 502)
+texture = ExtResource("8_83ust")
+
+[node name="APressed" type="Sprite2D" parent="wasd"]
+visible = false
+position = Vector2(282, 502)
+texture = ExtResource("9_scwdp")
+
+[node name="wiglewigle" type="Node2D" parent="."]
+top_level = true
+
+[node name="Cursor" type="Sprite2D" parent="wiglewigle"]
+position = Vector2(278, 248)
+texture = ExtResource("11_06kgc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_vkyn8")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Node2D/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Node2D2/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid" to="Node2D3/meteords/Astroid" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid2" to="Node2D3/meteords/Astroid2" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid3" to="Node2D3/meteords/Astroid3" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid4" to="Node2D3/meteords/Astroid4" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid5" to="Node2D3/meteords/Astroid5" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid6" to="Node2D3/meteords/Astroid6" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid7" to="Node2D3/meteords/Astroid7" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid8" to="Node2D3/meteords/Astroid8" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid9" to="Node2D3/meteords/Astroid9" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid10" to="Node2D3/meteords/Astroid10" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid11" to="Node2D3/meteords/Astroid11" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid12" to="Node2D3/meteords/Astroid12" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid13" to="Node2D3/meteords/Astroid13" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid14" to="Node2D3/meteords/Astroid14" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid15" to="Node2D3/meteords/Astroid15" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid16" to="Node2D3/meteords/Astroid16" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D3/meteords/Astroid17" to="Node2D3/meteords/Astroid17" method="_on_area_entered"]

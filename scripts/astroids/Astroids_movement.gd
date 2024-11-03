@@ -22,9 +22,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Rocket":
+		Global.died = true
 		canvas_layer.show()
 		Engine.time_scale = 0.000000005
 		die_allowed = false
+		Global.died = true
 
 
 func _on_area_entered(area: Area2D) -> void:

@@ -1,30 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://5p15jxkxho6l"]
+[gd_scene load_steps=10 format=3 uid="uid://5p15jxkxho6l"]
 
 [ext_resource type="Texture2D" uid="uid://cbro0i3ryiaas" path="res://Sprites/rocket/rocket.png" id="1_w1rb6"]
 [ext_resource type="PackedScene" uid="uid://pqvwarojv8c" path="res://Scenes/paddle.tscn" id="2_numcu"]
+[ext_resource type="AudioStream" uid="uid://ca6l3wwc67umf" path="res://engine.wav" id="3_gqrq1"]
 
 [sub_resource type="GDScript" id="GDScript_buagq"]
 resource_name = "RocketScript"
 script/source = "extends CharacterBody2D
 
-func _ready() -> void:
-	pass # Replace with function body.
+var speed = 75  # speed in pixels/sec
 
+func _physics_process(delta):
+	var direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	velocity = direction * speed
 
-func _process(delta: float) -> void:
-	pass
+	move_and_slide()
 "
+
+[sub_resource type="Gradient" id="Gradient_0l3f6"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lpre1"]
+gradient = SubResource("Gradient_0l3f6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rxo7v"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 25.0
+initial_velocity_min = -15.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, 98, 0)
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_lpre1")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkt15"]
 radius = 7.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0aovo"]
 radius = 5.0
-height = 28.0
+height = 10.0
 
 [node name="Rocket" type="CharacterBody2D"]
 top_level = true
 script = SubResource("GDScript_buagq")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 74)
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_rxo7v")
 
 [node name="Rocket" type="Sprite2D" parent="."]
 position = Vector2(0, 60)
@@ -37,8 +59,15 @@ shape = SubResource("CircleShape2D_tkt15")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 61)
+position = Vector2(-1, 55)
 shape = SubResource("CapsuleShape2D_0aovo")
 
 [node name="Paddle" parent="." instance=ExtResource("2_numcu")]
 position = Vector2(0, 61)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 75)
+stream = ExtResource("3_gqrq1")
+volume_db = -20.0
+pitch_scale = 0.95
+autoplay = true

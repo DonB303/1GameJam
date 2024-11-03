@@ -6,7 +6,7 @@
 resource_name = "PaddleScript"
 script/source = "extends CharacterBody2D
 
-@export var sensitivity: float = 2.0
+@export var sensitivity: float = 3.0
 
 func _physics_process(delta: float) -> void:
 	var mouse_position = get_global_mouse_position()
@@ -47,19 +47,19 @@ shape = SubResource("CapsuleShape2D_chx23")
 [node name="Paddle" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
-position = Vector2(-26, -26)
+position = Vector2(-28, -26)
 rotation = 0.808862
 scale = Vector2(1.11311, 1.05523)
 shape = SubResource("CapsuleShape2D_chx23")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Paddle"]
-position = Vector2(-32, -18)
+position = Vector2(-34, -14)
 rotation = 0.478214
 scale = Vector2(1.11311, 1.05523)
 shape = SubResource("CapsuleShape2D_chx23")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Paddle"]
-position = Vector2(-21, -30)
+position = Vector2(-19, -32)
 rotation = -2.10513
 scale = Vector2(1.21987, 1.13234)
 skew = 0.0490469
