@@ -1,44 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://pqvwarojv8c"]
+[gd_scene load_steps=4 format=3 uid="uid://b1ud7asdytkc2"]
 
 [ext_resource type="Texture2D" uid="uid://q2xcmfbwei8g" path="res://Sprites/shield/shield.png" id="1_eh8xt"]
 
-[sub_resource type="GDScript" id="GDScript_kel16"]
-resource_name = "PaddleScript"
-script/source = "extends CharacterBody2D
-
-@export var sensitivity: float = 2.0
+[sub_resource type="GDScript" id="GDScript_70xoe"]
+resource_name = "paddle"
+script/source = "extends Area2D
 
 func _physics_process(delta: float) -> void:
-	var mouse_position = get_global_mouse_position()
-	var direction = (mouse_position - global_position).normalized()
-	rotation = lerp_angle(rotation, direction.angle(), sensitivity * delta)
+	look_at(get_global_mouse_position())
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chx23"]
-radius = 2.7828
-height = 14.42
+radius = 4.46045
+height = 26.7336
 
-[node name="Paddle" type="CharacterBody2D"]
-script = SubResource("GDScript_kel16")
+[node name="Area2D" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = SubResource("GDScript_70xoe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-13, -11)
 texture = ExtResource("1_eh8xt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-26, -26)
+position = Vector2(-13, -13)
 rotation = 0.808862
-scale = Vector2(1.11311, 1.05523)
-shape = SubResource("CapsuleShape2D_chx23")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-32, -18)
-rotation = 0.478214
-scale = Vector2(1.11311, 1.05523)
-shape = SubResource("CapsuleShape2D_chx23")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D2"]
-position = Vector2(3.81245, -14.8934)
-rotation = -2.55908
 scale = Vector2(1.11311, 1.05523)
 shape = SubResource("CapsuleShape2D_chx23")

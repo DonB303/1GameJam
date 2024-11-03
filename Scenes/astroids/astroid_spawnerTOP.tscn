@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxnc7dv74i1o6"]
+[gd_scene load_steps=2 format=3 uid="uid://bdd2wcdhj2oi"]
 
 [ext_resource type="Script" path="res://scripts/astroids/astroid_spawner.gd" id="1_lw1f1"]
 
@@ -6,6 +6,7 @@
 script = ExtResource("1_lw1f1")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(328, 180)
 
 [node name="spawn_timer" type="Timer" parent="."]
 wait_time = 1.5
