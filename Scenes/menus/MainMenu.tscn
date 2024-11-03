@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn6j23v5pcwlr"]
+[gd_scene load_steps=11 format=3 uid="uid://dn6j23v5pcwlr"]
 
 [ext_resource type="Script" path="res://Scenes/menus/main_menu.gd" id="1_2waa3"]
 [ext_resource type="Texture2D" uid="uid://b0uvoabttp1s4" path="res://Scenes/menus/Penisssss (DEBUG) 02.11.2024 20_52_16.png" id="1_4jvug"]
 [ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="1_hy3sd"]
+[ext_resource type="AudioStream" uid="uid://by1diwv3h72j1" path="res://Musik.mp3" id="5_jf4s7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qkn0e"]
 texture = ExtResource("1_4jvug")
@@ -131,6 +132,12 @@ offset_bottom = 153.0
 grow_horizontal = 2
 text = "Meteor Defender"
 label_settings = SubResource("LabelSettings_6cq4h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(330, 366)
+stream = ExtResource("5_jf4s7")
+pitch_scale = 1.2
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

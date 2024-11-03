@@ -35,6 +35,7 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_button_pressed() -> void:
 	if Global.reged == true:
 		get_tree().change_scene_to_file("res://Scenes/leader_board.tscn")
+		Engine.time_scale = 1
 	else:
 		animation_player.play("notifi")
 
@@ -42,3 +43,9 @@ func _on_button_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
+	Engine.time_scale = 1
+
+
+func _on_ok_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/menus/MainMenu.tscn")
+	Engine.time_scale = 1

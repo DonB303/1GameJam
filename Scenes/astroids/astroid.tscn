@@ -82,6 +82,7 @@ font = ExtResource("3_euf12")
 font_size = 100
 
 [node name="Astroid" type="Area2D"]
+position = Vector2(0, -1)
 script = ExtResource("1_qq8yn")
 
 [node name="Astroid001" type="Sprite2D" parent="."]
@@ -99,8 +100,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CanvasLayer"]
 offset_left = 102.0
@@ -202,6 +205,6 @@ label_settings = SubResource("LabelSettings_qhr8q")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="pressed" from="Control/CanvasLayer/VBoxContainer/OK" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/CanvasLayer/VBoxContainer/OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]

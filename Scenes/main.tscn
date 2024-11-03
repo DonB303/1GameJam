@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlj3uiefxgaf3"]
+[gd_scene load_steps=5 format=3 uid="uid://dlj3uiefxgaf3"]
 
 [ext_resource type="PackedScene" uid="uid://cu4fxp44do4wl" path="res://Scenes/rocket/rocket.tscn" id="1_mhbdb"]
 [ext_resource type="PackedScene" uid="uid://b7th283qakcw7" path="res://Scenes/bg/background.tscn" id="2_wcml8"]
 [ext_resource type="PackedScene" uid="uid://dxnc7dv74i1o6" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="3_pvpv1"]
+[ext_resource type="AudioStream" uid="uid://by1diwv3h72j1" path="res://Musik.mp3" id="4_hkap5"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,3 +22,8 @@ position = Vector2(136, 214)
 
 [node name="Astroid spawner3" parent="Node" instance=ExtResource("3_pvpv1")]
 position = Vector2(186, 214)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(333, 524)
+stream = ExtResource("4_hkap5")
+autoplay = true

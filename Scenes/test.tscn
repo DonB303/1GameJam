@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c42vg4kch6ufb"]
+[gd_scene load_steps=10 format=3 uid="uid://c42vg4kch6ufb"]
 
 [ext_resource type="PackedScene" uid="uid://5p15jxkxho6l" path="res://Scenes/rocket.tscn" id="1_mhbdb"]
 [ext_resource type="Shader" path="res://Shaders/ScrollyShader.gdshader" id="1_uq0no"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="3_a7uj8"]
 [ext_resource type="PackedScene" uid="uid://bl048f2jsrwxn" path="res://Scenes/get_player_name.tscn" id="6_6c37h"]
 [ext_resource type="PackedScene" uid="uid://dxnc7dv74i1o6" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="7_fjvdi"]
+[ext_resource type="AudioStream" uid="uid://by1diwv3h72j1" path="res://Musik.mp3" id="7_uxp6h"]
 
 [sub_resource type="GDScript" id="GDScript_bo4pu"]
 resource_name = "TimeScript"
@@ -94,5 +95,11 @@ position = Vector2(136, 189)
 
 [node name="Astroid spawner6" parent="Node" instance=ExtResource("7_fjvdi")]
 position = Vector2(186, 189)
+
+[node name="Musik" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_uxp6h")
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

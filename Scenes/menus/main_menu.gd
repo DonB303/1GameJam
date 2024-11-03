@@ -1,10 +1,16 @@
 extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+var pitch_scale_plus = randf_range(0.005, 0.05)
+var minus_oder_pluss = randf_range(1, 2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if minus_oder_pluss > 1:
+		audio_stream_player_2d.pitch_scale += pitch_scale_plus
+	if minus_oder_pluss < 1:
+		audio_stream_player_2d.pitch_scale -= pitch_scale_plus
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
