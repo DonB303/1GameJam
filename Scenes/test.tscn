@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://5p15jxkxho6l" path="res://Scenes/rocket.tscn" id="1_mhbdb"]
 [ext_resource type="Shader" path="res://Shaders/ScrollyShader.gdshader" id="1_uq0no"]
-[ext_resource type="Script" path="res://scripts/astroids/astroid_spawner.gd" id="2_3lk0v"]
 [ext_resource type="Texture2D" uid="uid://rolf7jy4ya1c" path="res://Sprites/BG/starrybckg.png" id="2_omlr7"]
 [ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="3_a7uj8"]
 [ext_resource type="PackedScene" uid="uid://bl048f2jsrwxn" path="res://Scenes/get_player_name.tscn" id="6_6c37h"]
+[ext_resource type="PackedScene" uid="uid://dxnc7dv74i1o6" path="res://Scenes/astroids/astroid_spawnerTOP.tscn" id="7_fjvdi"]
 
 [sub_resource type="GDScript" id="GDScript_bo4pu"]
 resource_name = "TimeScript"
@@ -64,21 +64,6 @@ text = "TIME:
 wait_time = 0.01
 autostart = true
 
-[node name="Astroid spawner" type="Node2D" parent="."]
-position = Vector2(323, 419)
-script = ExtResource("2_3lk0v")
-
-[node name="Marker2D" type="Marker2D" parent="Astroid spawner"]
-position = Vector2(328, 180)
-
-[node name="spawn_timer" type="Timer" parent="Astroid spawner"]
-wait_time = 1.5
-autostart = true
-
-[node name="wave_timer" type="Timer" parent="Astroid spawner"]
-wait_time = 3.0
-autostart = true
-
 [node name="Rocket" parent="." instance=ExtResource("1_mhbdb")]
 position = Vector2(330, 527)
 
@@ -90,6 +75,24 @@ zoom = Vector2(3.5, 3.5)
 [node name="GetPlayerName" parent="." instance=ExtResource("6_6c37h")]
 visible = false
 
+[node name="Node" type="Node" parent="."]
+
+[node name="Astroid spawner" parent="Node" instance=ExtResource("7_fjvdi")]
+position = Vector2(161, 185)
+
+[node name="Astroid spawner2" parent="Node" instance=ExtResource("7_fjvdi")]
+position = Vector2(136, 214)
+
+[node name="Astroid spawner3" parent="Node" instance=ExtResource("7_fjvdi")]
+position = Vector2(186, 214)
+
+[node name="Astroid spawner4" parent="Node" instance=ExtResource("7_fjvdi")]
+position = Vector2(161, 160)
+
+[node name="Astroid spawner5" parent="Node" instance=ExtResource("7_fjvdi")]
+position = Vector2(136, 189)
+
+[node name="Astroid spawner6" parent="Node" instance=ExtResource("7_fjvdi")]
+position = Vector2(186, 189)
+
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
-[connection signal="timeout" from="Astroid spawner/spawn_timer" to="Astroid spawner" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Astroid spawner/wave_timer" to="Astroid spawner" method="_on_wave_timer_timeout"]

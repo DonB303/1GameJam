@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://5p15jxkxho6l"]
 
 [ext_resource type="Texture2D" uid="uid://cbro0i3ryiaas" path="res://Sprites/rocket/rocket.png" id="1_w1rb6"]
-[ext_resource type="PackedScene" uid="uid://b1ud7asdytkc2" path="res://Scenes/paddle.tscn" id="2_numcu"]
+[ext_resource type="PackedScene" uid="uid://pqvwarojv8c" path="res://Scenes/paddle.tscn" id="2_numcu"]
 
 [sub_resource type="GDScript" id="GDScript_buagq"]
 resource_name = "RocketScript"
