@@ -42,8 +42,6 @@ font = ExtResource("3_euf12")
 font_size = 100
 
 [node name="Astroid" type="Area2D"]
-top_level = true
-collision_mask = 9
 script = ExtResource("1_qq8yn")
 
 [node name="Astroid001" type="Sprite2D" parent="."]
@@ -54,8 +52,6 @@ position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_olq33")
 
-<<<<<<< HEAD
-=======
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -112,7 +108,6 @@ grow_horizontal = 2
 text = "You died"
 label_settings = SubResource("LabelSettings_qhr8q")
 
->>>>>>> refs/remotes/origin/main
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/CanvasLayer/Button" to="." method="_on_button_pressed"]

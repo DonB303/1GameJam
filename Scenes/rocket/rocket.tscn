@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu4fxp44do4wl"]
+[gd_scene load_steps=9 format=3 uid="uid://cxjl0b3euvddk"]
 
 [ext_resource type="Texture2D" uid="uid://cbro0i3ryiaas" path="res://Sprites/rocket/rocket.png" id="1_w1rb6"]
 [ext_resource type="PackedScene" uid="uid://pqvwarojv8c" path="res://Scenes/paddle.tscn" id="2_numcu"]
