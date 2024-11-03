@@ -1,11 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsdgmb1bay6yu"]
+[gd_scene load_steps=10 format=3 uid="uid://bsdgmb1bay6yu"]
 
 [ext_resource type="Script" path="res://scripts/astroids/Astroids_movement.gd" id="1_qq8yn"]
 [ext_resource type="Texture2D" uid="uid://bew8ejtukocfw" path="res://Sprites/Astroids/Astroid001.png" id="2_xrtj0"]
+[ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="3_euf12"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olq33"]
 radius = 9.0
 height = 28.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mrxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs4ro"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bgw"]
+bg_color = Color(0.635294, 0.635294, 0.635294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g1ox"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qhr8q"]
+font = ExtResource("3_euf12")
+font_size = 100
 
 [node name="Astroid" type="Area2D"]
 top_level = true
@@ -20,5 +54,65 @@ position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_olq33")
 
+<<<<<<< HEAD
+=======
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+visible = false
+
+[node name="Button" type="Button" parent="Control/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -41.5
+offset_right = 108.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_euf12")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8mrxo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xs4ro")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_50bgw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5g1ox")
+text = "Ok"
+
+[node name="Label" type="Label" parent="Control/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 65.0
+offset_right = 240.5
+offset_bottom = 192.0
+grow_horizontal = 2
+text = "You died"
+label_settings = SubResource("LabelSettings_qhr8q")
+
+>>>>>>> refs/remotes/origin/main
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pressed" from="Control/CanvasLayer/Button" to="." method="_on_button_pressed"]
