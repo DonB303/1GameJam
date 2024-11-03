@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxnc7dv74i1o6"]
+
+[ext_resource type="Script" path="res://scripts/astroids/astroid_spawner.gd" id="1_lw1f1"]
+
+[node name="Astroid spawner" type="Node2D"]
+script = ExtResource("1_lw1f1")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="wave_timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="wave_timer" to="." method="_on_wave_timer_timeout"]

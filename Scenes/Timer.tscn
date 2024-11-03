@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dknphubt5ydlx"]
+
+[ext_resource type="FontFile" uid="uid://cx0jes2bl5cvh" path="res://SourceCodePro-SemiBold.ttf" id="1_5luw4"]
+
+[sub_resource type="GDScript" id="GDScript_bo4pu"]
+resource_name = "TimeScript"
+script/source = "extends Control
+
+@onready var timer: Timer = $Timer
+@onready var label: Label = $Label
+
+var time_in_sec: int = 0
+
+func _ready() -> void:
+	timer.start()
+
+func _on_timer_timeout() -> void:
+	time_in_sec += 1
+	var m = int(time_in_sec / 3600.0)
+	var s = int(time_in_sec / 60.0 - m * 60)
+	var ms = time_in_sec - s * 60.0 - m * 3600
+	label.text = '%02d:%02d:%02d' % [m, s, ms]
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_bo4pu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_5luw4")
+theme_override_font_sizes/font_size = 32
+text = "TIME:
+ "
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
